@@ -5,207 +5,225 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sovereign Tech Stack | shiftcrypto69</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --glass: rgba(15, 15, 25, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.12);
-            --gold: #FFD700;
-            --cyan: #00E5FF;
-            --bg-dark: #050508;
+            --cosmos-bg: #050505;
+            --cosmos-accent: #6c5ce7;
+            --cosmos-text-dim: #9ca3af;
+            --cosmos-border: rgba(255, 255, 255, 0.1);
         }
 
         body {
-            background-color: var(--bg-dark);
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 229, 255, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 40%);
-            color: #E0E0E0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            min-height: 100vh;
+            background-color: var(--cosmos-bg);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
+            overflow-x: hidden;
         }
 
-        .main-container {
-            max-width: 900px;
-            width: 100%;
+        /* Elemen Atmosfera Cosmos */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% -20%, #1e1b4b 0%, transparent 50%);
+            z-index: -1;
         }
 
-        .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(25px) saturate(180%);
-            -webkit-backdrop-filter: blur(25px) saturate(180%);
-            border: 1px solid var(--glass-border);
-            border-radius: 32px;
-            padding: 50px 40px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        .hero-section {
+            padding: 100px 20px 60px;
             text-align: center;
+            max-width: 900px;
         }
 
-        .crown-wrapper {
-            background: rgba(255, 215, 0, 0.1);
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 20px;
-            margin: 0 auto 30px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-
-        .crown-wrapper i {
-            font-size: 2.5rem;
-            color: var(--gold);
-            filter: drop-shadow(0 0 8px var(--gold));
+        .badge-exclusive {
+            background: rgba(108, 92, 231, 0.1);
+            color: var(--cosmos-accent);
+            border: 1px solid var(--cosmos-accent);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            display: inline-block;
         }
 
         h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 800;
-            letter-spacing: -1px;
-            background: linear-gradient(to right, #fff, #888);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 24px;
         }
 
         .tagline {
-            color: #888;
-            font-size: 1.1rem;
-            margin-bottom: 40px;
+            font-size: 1.25rem;
+            color: var(--cosmos-text-dim);
+            max-width: 600px;
+            margin: 0 auto 48px;
+            line-height: 1.6;
         }
 
-        /* Pillars Grid */
-        .pillar-grid {
+        /* Grid Pillars ala Cosmos Technology */
+        .pillar-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            width: 100%;
+            max-width: 1100px;
+            padding: 0 20px 80px;
         }
 
-        .pillar-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--glass-border);
-            padding: 20px;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            text-align: left;
+        .pillar-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--cosmos-border);
+            border-radius: 24px;
+            padding: 32px;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: default;
         }
 
-        .pillar-item:hover {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: var(--cyan);
-            transform: translateY(-5px);
+        .pillar-card:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-8px);
         }
 
-        .pillar-item h3 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--cyan);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
+        .pillar-card i {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--cosmos-accent);
         }
 
-        .pillar-item p {
-            font-size: 0.8rem;
-            color: #aaa;
+        .pillar-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .pillar-card p {
+            color: var(--cosmos-text-dim);
+            line-height: 1.6;
+            font-size: 0.95rem;
             margin: 0;
         }
 
-        .ascii-box {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            border-radius: 15px;
-            font-family: 'Monaco', 'Courier New', monospace;
-            font-size: 8px;
-            color: var(--cyan);
-            overflow-x: auto;
-            margin-bottom: 40px;
-            border: 1px dashed rgba(0, 229, 255, 0.2);
-        }
-
-        .btn-hub {
+        /* Butang Gaya Cosmos (Paling Penting) */
+        .btn-cosmos {
+            position: relative;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 14px 32px;
-            background: #fff;
-            color: #000;
+            justify-content: center;
+            padding: 16px 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #fff;
             text-decoration: none;
-            border-radius: 16px;
-            font-weight: 700;
-            transition: 0.3s;
+            background: #000;
+            border-radius: 12px;
+            border: 1px solid var(--cosmos-border);
+            transition: 0.3s ease;
+            overflow: hidden;
+            z-index: 1;
         }
 
-        .btn-hub:hover {
-            background: var(--gold);
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+        .btn-cosmos::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, var(--cosmos-accent), #a29bfe);
+            opacity: 0;
+            transition: 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn-cosmos:hover {
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 0 30px rgba(108, 92, 231, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-cosmos:hover::before {
+            opacity: 1;
         }
 
         footer {
-            margin-top: 40px;
-            font-size: 0.75rem;
-            color: #555;
-            letter-spacing: 1px;
+            padding: 60px 20px;
+            border-top: 1px solid var(--cosmos-border);
+            width: 100%;
+            text-align: center;
+            color: #4b5563;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+        }
+
+        .ascii-cosmos {
+            font-family: monospace;
+            font-size: 7px;
+            color: var(--cosmos-accent);
+            opacity: 0.4;
+            margin-bottom: 40px;
+            white-space: pre;
         }
     </style>
 </head>
 <body>
 
-<div class="main-container">
-    <div class="glass-card">
-        <div class="crown-wrapper">
-            <i class="fas fa-crown"></i>
-        </div>
-        
-        <h1>Sovereign Tech Stack</h1>
-        <p class="tagline">The Master Architect Blueprint</p>
+<section class="hero-section">
+    <div class="badge-exclusive">The Sovereign Era</div>
+    <h1>Sovereign Tech Stack</h1>
+    <p class="tagline">
+        Membina masa hadapan dengan kedaulatan mutlak—dari pasir silikon ke ekosistem yang saling berhubung.
+    </p>
+    
+    <div class="ascii-cosmos">
+        ███████╗ ██████╗ ██╗   ██╗███████╗██████╗ ███████╗██╗ ██████╗ ███╗   ██╗
+        ██╔════╝██╔═══██╗██║   ██║██╔════╝██╔══██╗██╔════╝██║██╔════╝ ████╗  ██║
+        ███████╗██║   ██║██║   ██║█████╗  ██████╔╝█████╗  ██║██║  ███╗██╔██╗ ██║
+        ╚════██║██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗██╔══╝  ██║██║   ██║██║╚██╗██║
+        ███████║╚██████╔╝ ╚████╔╝ ███████╗██║  ██║███████╗██║╚██████╔╝██║ ╚████║
+    </div>
 
-        <div class="ascii-box">
-<pre>
-███████╗ ██████╗ ██╗   ██╗███████╗██████╗ ███████╗██╗ ██████╗ ███╗   ██╗
-██╔════╝██╔═══██╗██║   ██║██╔════╝██╔══██╗██╔════╝██║██╔════╝ ████╗  ██║
-███████╗██║   ██║██║   ██║█████╗  ██████╔╝█████╗  ██║██║  ███╗██╔██╗ ██║
-╚════██║██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗██╔══╝  ██║██║   ██║██║╚██╗██║
-███████║╚██████╔╝ ╚████╔╝ ███████╗██║  ██║███████╗██║╚██████╔╝██║ ╚████║
-╚══════╝ ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-</pre>
-        </div>
+    <a href="https://shiftcrypto69.github.io/Mastery-Core-Central/" class="btn-cosmos">
+        Explore Central Hub <i class="fas fa-arrow-right ms-2"></i>
+    </a>
+</section>
 
-        <div class="pillar-grid">
-            <div class="pillar-item">
-                <h3>Silicon</h3>
-                <p>Ground Zero semiconductor physics & IC design.</p>
-            </div>
-            <div class="pillar-item">
-                <h3>Firmware</h3>
-                <p>Low-level C & bare-metal MCU manipulation.</p>
-            </div>
-            <div class="pillar-item">
-                <h3>Kernel</h3>
-                <p>AOSP & Linux systems engineering tuning.</p>
-            </div>
-            <div class="pillar-item">
-                <h3>Artifacts</h3>
-                <p>Cross-platform binary packaging mastery.</p>
-            </div>
-        </div>
-
-        <a href="https://shiftcrypto69.github.io/Mastery-Core-Central/" class="btn-hub">
-            <i class="fas fa-th-large"></i> Mastery Central Hub
-        </a>
-
-        <footer>
-            DESIGNED BY SHIFTCRYPTO69 &bull; MMXXVI
-        </footer>
+<div class="pillar-container">
+    <div class="pillar-card">
+        <i class="fas fa-atom"></i>
+        <h3>Silicon Foundation</h3>
+        <p>Ground zero of computation. Understanding the physics of semiconductors and transistor gates.</p>
+    </div>
+    <div class="pillar-card">
+        <i class="fas fa-microchip"></i>
+        <h3>Firmware Bridge</h3>
+        <p>Speaking directly to the hardware. Mastering bare-metal C and MCU register-level access.</p>
+    </div>
+    <div class="pillar-card">
+        <i class="fas fa-layer-group"></i>
+        <h3>Kernel Sovereignty</h3>
+        <p>Commanding the operating system. Building AOSP and tuning Linux kernels for performance.</p>
+    </div>
+    <div class="pillar-card">
+        <i class="fas fa-box-open"></i>
+        <h3>Artifact Distribution</h3>
+        <p>Wrapping sovereignty into packages. Cross-platform engineering for .deb, .apk, and .ipa.</p>
     </div>
 </div>
+
+<footer>
+    &copy; 2026 SHIFTCRYPTO69 &bull; ENGINEERED SOVEREIGNTY
+</footer>
 
 </body>
 </html>
