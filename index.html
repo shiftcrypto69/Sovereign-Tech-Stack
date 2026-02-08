@@ -5,175 +5,207 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sovereign Tech Stack | shiftcrypto69</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --glass: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --gold: #ffd700;
-            --cyan: #00d4ff;
+            --glass: rgba(15, 15, 25, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --gold: #FFD700;
+            --cyan: #00E5FF;
+            --bg-dark: #050508;
         }
 
         body {
-            background: radial-gradient(circle at top right, #1a1c2c, #0a0b10);
-            color: #fff;
-            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 229, 255, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 40%);
+            color: #E0E0E0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             min-height: 100vh;
-            overflow-x: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
 
-        /* Latar belakang beranimasi */
-        .bg-glow {
-            position: fixed;
-            width: 400px;
-            height: 400px;
-            background: var(--cyan);
-            filter: blur(150px);
-            border-radius: 50%;
-            opacity: 0.15;
-            z-index: -1;
-            top: 10%;
-            left: 10%;
-            animation: move 20s infinite alternate;
+        .main-container {
+            max-width: 900px;
+            width: 100%;
         }
 
-        @keyframes move {
-            from { transform: translate(0, 0); }
-            to { transform: translate(100%, 50%); }
-        }
-
-        /* Glass Card Style */
         .glass-card {
             background: var(--glass);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
             border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
-            transition: 0.4s;
+            border-radius: 32px;
+            padding: 50px 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
 
-        .glass-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-10px);
-            box-shadow: 0 15px 45px rgba(255, 215, 0, 0.1);
+        .crown-wrapper {
+            background: rgba(255, 215, 0, 0.1);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            margin: 0 auto 30px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
         }
 
-        .crown-icon {
-            font-size: 3rem;
+        .crown-wrapper i {
+            font-size: 2.5rem;
             color: var(--gold);
-            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
-            margin-bottom: 20px;
+            filter: drop-shadow(0 0 8px var(--gold));
         }
 
-        .stack-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .stack-item {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-left: 4px solid var(--cyan);
-            transition: 0.3s;
-        }
-
-        .stack-item:hover {
-            background: rgba(255, 255, 255, 0.08);
-            padding-left: 25px;
-        }
-
-        .btn-exclusive {
-            background: linear-gradient(45deg, var(--gold), #ffa500);
-            color: #000;
+        h1 {
             font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            color: #888;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        /* Pillars Grid */
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .pillar-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .pillar-item:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: var(--cyan);
+            transform: translateY(-5px);
+        }
+
+        .pillar-item h3 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--cyan);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            border: none;
-            border-radius: 50px;
-            padding: 12px 30px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .pillar-item p {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin: 0;
+        }
+
+        .ascii-box {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 8px;
+            color: var(--cyan);
+            overflow-x: auto;
+            margin-bottom: 40px;
+            border: 1px dashed rgba(0, 229, 255, 0.2);
+        }
+
+        .btn-hub {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 16px;
+            font-weight: 700;
             transition: 0.3s;
         }
 
-        .btn-exclusive:hover {
+        .btn-hub:hover {
+            background: var(--gold);
             transform: scale(1.05);
-            box-shadow: 0 0 20px var(--gold);
-            color: #000;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
         }
 
-        .ascii-art {
-            font-family: 'Courier New', monospace;
-            font-size: 10px;
-            color: var(--cyan);
-            line-height: 1;
-            opacity: 0.6;
+        footer {
+            margin-top: 40px;
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
-<div class="bg-glow"></div>
+<div class="main-container">
+    <div class="glass-card">
+        <div class="crown-wrapper">
+            <i class="fas fa-crown"></i>
+        </div>
+        
+        <h1>Sovereign Tech Stack</h1>
+        <p class="tagline">The Master Architect Blueprint</p>
 
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-            <div class="glass-card">
-                <i class="fas fa-crown crown-icon"></i>
-                <h1 class="display-4 fw-bold mb-3">Sovereign Tech Stack</h1>
-                <p class="lead text-secondary mb-4">
-                    "Dari sebutir pasir silikon sehingga ke ikon aplikasi."
-                </p>
-                
-                <div class="ascii-art mb-4">
-    _____                                _             
-   / ____|                              (_)            
-  | (___   _____   _____ _ __ ___ _ __   _  __ _ _ __  
-   \___ \ / _ \ \ / / _ \ '__/ _ \ '_ \ | |/ _` | '_ \ 
-   ____) | (_) \ V /  __/ | |  __/ | | || | (_| | | | |
-  |_____/ \___/ \_/ \___|_|  \___|_| |_|/ |\__,_|_| |_|
-                                      _/ |             
-                                     |__/              
-                </div>
+        <div class="ascii-box">
+<pre>
+███████╗ ██████╗ ██╗   ██╗███████╗██████╗ ███████╗██╗ ██████╗ ███╗   ██╗
+██╔════╝██╔═══██╗██║   ██║██╔════╝██╔══██╗██╔════╝██║██╔════╝ ████╗  ██║
+███████╗██║   ██║██║   ██║█████╗  ██████╔╝█████╗  ██║██║  ███╗██╔██╗ ██║
+╚════██║██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗██╔══╝  ██║██║   ██║██║╚██╗██║
+███████║╚██████╔╝ ╚████╔╝ ███████╗██║  ██║███████╗██║╚██████╔╝██║ ╚████║
+╚══════╝ ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+</pre>
+        </div>
 
-                <div class="row text-start mt-5">
-                    <div class="col-md-6">
-                        <div class="stack-item">
-                            <h6 class="mb-1 text-gold">I. Silicon Foundation</h6>
-                            <small class="text-muted">Physics of Semiconductors & Fabrication.</small>
-                        </div>
-                        <div class="stack-item">
-                            <h6 class="mb-1 text-gold">II. Bare-Metal Bridge</h6>
-                            <small class="text-muted">MCU Firmware & Register Manipulation.</small>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="stack-item">
-                            <h6 class="mb-1 text-gold">III. Kernel Sovereignty</h6>
-                            <small class="text-muted">AOSP Build & Linux Kernel Tuning.</small>
-                        </div>
-                        <div class="stack-item" style="border-left-color: var(--gold);">
-                            <h6 class="mb-1 text-gold">IV. Artifact Mastery</h6>
-                            <small class="text-muted">Packaging .deb, .apk, & .ipa.</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-5">
-                    <a href="https://shiftcrypto69.github.io/Mastery-Core-Central/" class="btn btn-exclusive">
-                        <i class="fas fa-arrow-left me-2"></i> Kembali Ke Central Hub
-                    </a>
-                </div>
+        <div class="pillar-grid">
+            <div class="pillar-item">
+                <h3>Silicon</h3>
+                <p>Ground Zero semiconductor physics & IC design.</p>
+            </div>
+            <div class="pillar-item">
+                <h3>Firmware</h3>
+                <p>Low-level C & bare-metal MCU manipulation.</p>
+            </div>
+            <div class="pillar-item">
+                <h3>Kernel</h3>
+                <p>AOSP & Linux systems engineering tuning.</p>
+            </div>
+            <div class="pillar-item">
+                <h3>Artifacts</h3>
+                <p>Cross-platform binary packaging mastery.</p>
             </div>
         </div>
+
+        <a href="https://shiftcrypto69.github.io/Mastery-Core-Central/" class="btn-hub">
+            <i class="fas fa-th-large"></i> Mastery Central Hub
+        </a>
+
+        <footer>
+            DESIGNED BY SHIFTCRYPTO69 &bull; MMXXVI
+        </footer>
     </div>
 </div>
-
-<footer class="text-center mt-5">
-    <p class="small text-muted">© 2026 Sovereign Ownership by <span style="color: var(--gold);">shiftcrypto69</span></p>
-</footer>
 
 </body>
 </html>
