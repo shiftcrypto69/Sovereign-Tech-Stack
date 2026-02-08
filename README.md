@@ -41,3 +41,18 @@ Seni membungkus (packaging) inovasi ke dalam fail edaran (.deb, .apk, .ipa) yang
 
 ## 👨‍💻 Master Architect
 **shiftcrypto69** *“Building the future, owning the stack.”*
+
+🚀 Cara Setup di WSL:
+ * Cipta folder baru:
+   mkdir Sovereign-Tech-Stack && cd Sovereign-Tech-Stack
+
+ * Initialize Git:
+   git init
+
+ * Cipta fail-fail di atas (Gunakan nano README.md, nano .gitignore, dsb).
+ * Commit dan Push ke GitHub:
+   git add .
+git commit -m "Initialize Sovereign Tech Stack - Exclusive Edition"
+git branch -M main
+git remote add origin https://github.com/shiftcrypto69/Sovereign-Tech-Stack.git
+git push -u origin main
