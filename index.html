@@ -36,10 +36,25 @@
             z-index: -1;
         }
 
+        /* Keyframes Animasi */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+                filter: blur(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+
         .hero-section {
             padding: 100px 20px 60px;
             text-align: center;
             max-width: 900px;
+            animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
 
         .badge-exclusive {
@@ -72,7 +87,7 @@
             line-height: 1.6;
         }
 
-        /* Grid Pillars ala Cosmos Technology */
+        /* Grid Pillars ala Cosmos */
         .pillar-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -89,6 +104,8 @@
             padding: 32px;
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             cursor: default;
+            opacity: 0; /* Untuk animasi delay */
+            animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
 
         .pillar-card:hover {
@@ -96,6 +113,12 @@
             background: rgba(255, 255, 255, 0.05);
             transform: translateY(-8px);
         }
+
+        /* Staggered Delay untuk kotak */
+        .pillar-card:nth-child(1) { animation-delay: 0.4s; }
+        .pillar-card:nth-child(2) { animation-delay: 0.6s; }
+        .pillar-card:nth-child(3) { animation-delay: 0.8s; }
+        .pillar-card:nth-child(4) { animation-delay: 1.0s; }
 
         .pillar-card i {
             font-size: 24px;
@@ -116,7 +139,7 @@
             margin: 0;
         }
 
-        /* Butang Gaya Cosmos (Paling Penting) */
+        /* Butang Gaya Cosmos */
         .btn-cosmos {
             position: relative;
             display: inline-flex;
@@ -133,6 +156,8 @@
             transition: 0.3s ease;
             overflow: hidden;
             z-index: 1;
+            opacity: 0;
+            animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
         }
 
         .btn-cosmos::before {
@@ -173,6 +198,21 @@
             opacity: 0.4;
             margin-bottom: 40px;
             white-space: pre;
+            overflow-x: auto;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 600px) {
+            .ascii-cosmos {
+                font-size: 4px;
+                line-height: 1.1;
+            }
+            .hero-section {
+                padding-top: 60px;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -186,11 +226,12 @@
     </p>
     
     <div class="ascii-cosmos">
-        ███████╗ ██████╗ ██╗   ██╗███████╗██████╗ ███████╗██╗ ██████╗ ███╗   ██╗
-        ██╔════╝██╔═══██╗██║   ██║██╔════╝██╔══██╗██╔════╝██║██╔════╝ ████╗  ██║
-        ███████╗██║   ██║██║   ██║█████╗  ██████╔╝█████╗  ██║██║  ███╗██╔██╗ ██║
-        ╚════██║██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗██╔══╝  ██║██║   ██║██║╚██╗██║
-        ███████║╚██████╔╝ ╚████╔╝ ███████╗██║  ██║███████╗██║╚██████╔╝██║ ╚████║
+ ███████╗ ██████╗ ██╗   ██╗███████╗██████╗ ███████╗██╗ ██████╗ ███╗   ██╗
+ ██╔════╝██╔═══██╗██║   ██║██╔════╝██╔══██╗██╔════╝██║██╔════╝ ████╗  ██║
+ ███████╗██║   ██║██║   ██║█████╗  ██████╔╝█████╗  ██║██║  ███╗██╔██╗ ██║
+ ╚════██║██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗██╔══╝  ██║██║   ██║██║╚██╗██║
+ ███████║╚██████╔╝ ╚████╔╝ ███████╗██║  ██║███████╗██║╚██████╔╝██║ ╚████║
+ ╚══════╝ ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝
     </div>
 
     <a href="https://shiftcrypto69.github.io/Mastery-Core-Central/" class="btn-cosmos">
